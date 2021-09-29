@@ -1,5 +1,5 @@
 <template lang="pug">
-  transition(name="transition-dropdown")
+  transition(name="transition-dropdown" tag="div" class="mb-4")
     .weather-current(v-if="getWeatherCurrent")
       .box
         p.heading Thời tiết hiện tại [{{ getDate }}]

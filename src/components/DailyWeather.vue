@@ -11,10 +11,10 @@
           div.px-2(v-for="slider in getDaily" :key="+slider.dt")
             .slick-slide-item
               p.mb-0.ps-2 {{ getDate(slider.dt) }}
-              .row.align-items-center
+              .d-flex.align-items-center
                 .col-auto
                   img(:src="getIcon(slider.weather[0].icon)" width="80")
-                .col-auto.ps-0
+                .col.ps-2
                   p.mb-0 
                     strong.temp-max {{ Math.round(slider.temp.max) }}&deg; / 
                     span.temp-min {{ Math.round(slider.temp.min) }}&deg;

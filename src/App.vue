@@ -4,8 +4,8 @@
       Navbar
       WeatherContainer
       .clearfix(v-if="!getWeatherCurrent && !getWeatherOneCall")
-        .container.py-4
-            p Hãy nhập địa điểm bạn muốn vào ô tìm kiếm.
+        .container.py-0
+            p.mb-0 Hãy nhập địa điểm bạn muốn vào ô tìm kiếm.
 </template>
 
 <script>

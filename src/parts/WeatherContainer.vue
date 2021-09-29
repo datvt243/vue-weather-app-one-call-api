@@ -3,8 +3,7 @@
     .container
       ShowError
       Location
-      .mb-4
-        CurrentWeather
+      CurrentWeather
       DailyWeather
 </template>
 
