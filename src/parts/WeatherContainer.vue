@@ -5,7 +5,6 @@
       Location
       .mb-4
         CurrentWeather
-      hr
       DailyWeather
 </template>
 

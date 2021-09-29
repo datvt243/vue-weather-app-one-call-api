@@ -1,6 +1,7 @@
 <template lang="pug">
   transition(name="transition-dropdown")
     .daily-weather(v-if="getDaily")
+      hr
       .mb-4
         h3.heading
           font-awesome-icon(:icon="faCloud")

@@ -5,7 +5,7 @@
       WeatherContainer
       .clearfix(v-if="!getWeatherCurrent && !getWeatherOneCall")
         .container.py-4
-          p Hãy nhập địa điểm bạn muốn vào ô tìm kiếm.
+            p Hãy nhập địa điểm bạn muốn vào ô tìm kiếm.
 </template>
 
 <script>
