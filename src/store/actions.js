@@ -14,8 +14,8 @@ export default {
     await fetch(stringAPICurrent)
       .then((response) => response.json())
       .then((data) => {
-        commit("setLat", lat);
-        commit("setLon", lon);
+        commit("setLat", data.coord.lat);
+        commit("setLon", data.coord.lon);
         if (+data.cod === 200) {
           commit("setWeatherCurrent", data);
           commit("setError", { err: false, value: null });

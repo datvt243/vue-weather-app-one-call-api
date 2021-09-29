@@ -3,6 +3,9 @@
     Default
       Navbar
       WeatherContainer
+      .clearfix(v-if="!getWeatherCurrent && !getWeatherOneCall")
+        .container.py-4
+          p Hãy nhập địa điểm bạn muốn vào ô tìm kiếm.
 </template>
 
 <script>
@@ -10,8 +13,12 @@ import Default from "./layouts/Default.vue";
 import Navbar from "./parts/Navbar.vue";
 import WeatherContainer from "./parts/WeatherContainer.vue";
 
+import { mapGetters } from "vuex";
 export default {
   name: "App",
+  data() {
+    return {};
+  },
   components: {
     Default,
     Navbar,
@@ -27,6 +34,9 @@ export default {
         await this.$store.dispatch("fetchDataWeather", { lat, lon });
       });
     }
+  },
+  computed: {
+    ...mapGetters(["getWeatherCurrent", "getWeatherOneCall"]),
   },
 };
 </script>

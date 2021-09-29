@@ -1,5 +1,5 @@
 <template lang="pug">
-  .location
+  .location(v-if="getWeatherCurrent")
     .row.align-items-end
       .col
         h2.heading.mb-0
