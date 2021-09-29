@@ -1,28 +1,37 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+<template lang="pug">
+  #app.overflow
+    Default
+      Navbar
+      WeatherContainer
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Default from "./layouts/Default.vue";
+import Navbar from "./parts/Navbar.vue";
+import WeatherContainer from "./parts/WeatherContainer.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    Default,
+    Navbar,
+    WeatherContainer,
+  },
+  created() {
+    let lon;
+    let lat;
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(async (position) => {
+        lon = position.coords.longitude;
+        lat = position.coords.latitude;
+        await this.$store.dispatch("fetchDataWeather", { lat, lon });
+      });
+    }
   },
 };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="sass" scoped>
+.overflow
+  overflow: hidden
 </style>
